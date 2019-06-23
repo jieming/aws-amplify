@@ -15,6 +15,7 @@ app.use(function(req, res, next) {
   next();
 });
 
+// external api
 app.get("/people", function(req, res) {
   // event, context
   // req.apiGateway.event req.apiGateway.context
@@ -35,60 +36,22 @@ app.get("/people", function(req, res) {
     });
 });
 
-/**********************
- * Example get method *
- **********************/
-
-app.get("/items", function(req, res) {
-  // Add your code here
-  res.json({ success: "get call succeed!", url: req.url });
-});
-
-app.get("/items/*", function(req, res) {
-  // Add your code here
-  res.json({ success: "get call succeed!", url: req.url });
-});
-
-/****************************
- * Example post method *
- ****************************/
-
-app.post("/items", function(req, res) {
-  // Add your code here
-  res.json({ success: "post call succeed!", url: req.url, body: req.body });
-});
-
-app.post("/items/*", function(req, res) {
-  // Add your code here
-  res.json({ success: "post call succeed!", url: req.url, body: req.body });
-});
-
-/****************************
- * Example put method *
- ****************************/
-
-app.put("/items", function(req, res) {
-  // Add your code here
-  res.json({ success: "put call succeed!", url: req.url, body: req.body });
-});
-
-app.put("/items/*", function(req, res) {
-  // Add your code here
-  res.json({ success: "put call succeed!", url: req.url, body: req.body });
-});
-
-/****************************
- * Example delete method *
- ****************************/
-
-app.delete("/items", function(req, res) {
-  // Add your code here
-  res.json({ success: "delete call succeed!", url: req.url });
-});
-
-app.delete("/items/*", function(req, res) {
-  // Add your code here
-  res.json({ success: "delete call succeed!", url: req.url });
+// internal api with authentication
+app.get("/coins", function(req, res) {
+  axios
+    .get("https://api.coinlore.com/api/tickers")
+    .then(response => {
+      res.json({
+        success: "get call succeed!",
+        url: req.url,
+        coins: response.data.data
+      });
+    })
+    .catch(error => {
+      res.json({
+        error: true
+      });
+    });
 });
 
 app.listen(3000, function() {

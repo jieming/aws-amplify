@@ -6,6 +6,20 @@
             "privacy": {
                 "open": true
             }
+        },
+        {
+            "name": "/coins",
+            "lambdaFunction": "mainlambda",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            }
         }
     ],
     "resourceName": "mainappapi",
@@ -16,7 +30,7 @@
         }
     ],
     "privacy": {
-        "auth": 0,
+        "auth": 1,
         "unauth": 0,
         "authRoleName": "jay-amplify-restapi-jay-20190622160923-authRole",
         "unAuthRoleName": "jay-amplify-restapi-jay-20190622160923-unauthRole"
@@ -30,5 +44,6 @@
                 "Arn"
             ]
         }
-    ]
+    ],
+    "uuid": "e90c5698"
 }

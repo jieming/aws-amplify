@@ -12,6 +12,9 @@ function App() {
       const peopleData = await API.get("mainappapi", "/people");
       console.log("peopleData: ", peopleData);
       updatePeople(peopleData.people);
+
+      const coinData = await API.get("mainappapi", "/coins");
+      console.log("coinData: ", coinData);
     } catch (error) {
       console.log("error: ", error);
     }
