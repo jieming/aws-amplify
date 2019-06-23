@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/people",
+            "lambdaFunction": "mainlambda",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "mainappapi",
+    "apiName": "mainappapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "mainlambda"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "jay-amplify-restapi-jay-20190622160923-authRole",
+        "unAuthRoleName": "jay-amplify-restapi-jay-20190622160923-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "mainlambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
