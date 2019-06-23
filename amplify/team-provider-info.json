@@ -1,0 +1,19 @@
+{
+    "jay": {
+        "awscloudformation": {
+            "AuthRoleName": "jay-amplify-restapi-jay-20190622160923-authRole",
+            "UnauthRoleArn": "arn:aws:iam::819519896902:role/jay-amplify-restapi-jay-20190622160923-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::819519896902:role/jay-amplify-restapi-jay-20190622160923-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "jay-amplify-restapi-jay-20190622160923-deployment",
+            "UnauthRoleName": "jay-amplify-restapi-jay-20190622160923-unauthRole",
+            "StackName": "jay-amplify-restapi-jay-20190622160923",
+            "StackId": "arn:aws:cloudformation:eu-west-1:819519896902:stack/jay-amplify-restapi-jay-20190622160923/b80caac0-94ff-11e9-982f-066324f10f26"
+        },
+        "categories": {
+            "auth": {
+                "jayamplifyrestapi66fedead": {}
+            }
+        }
+    }
+}
