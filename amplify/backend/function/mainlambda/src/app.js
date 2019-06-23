@@ -1,6 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var awsServerlessExpressMiddleware = require("aws-serverless-express/middleware");
+var axios = require("axios");
 
 // declare a new express app
 var app = express();
@@ -15,17 +16,23 @@ app.use(function(req, res, next) {
 });
 
 app.get("/people", function(req, res) {
-  const people = [{ name: "jay" }, { name: "kay" }];
-
   // event, context
   // req.apiGateway.event req.apiGateway.context
   // req.body (payload)
-
-  res.json({
-    success: "get call succeed!",
-    url: req.url,
-    people
-  });
+  axios
+    .get("https://swapi.co/api/people/")
+    .then(response => {
+      res.json({
+        success: "get call succeed!",
+        url: req.url,
+        people: response.data.results
+      });
+    })
+    .catch(error => {
+      res.json({
+        error: true
+      });
+    });
 });
 
 /**********************

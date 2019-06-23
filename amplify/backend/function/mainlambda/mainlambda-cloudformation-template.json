@@ -63,7 +63,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "jay-amplify-restapi-jay-20190622160923-deployment",
-					"S3Key": "amplify-builds/mainlambda-1561307814-latest-build.zip"
+					"S3Key": "amplify-builds/mainlambda-1561309392-latest-build.zip"
 				}
 			}
 		},
