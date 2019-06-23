@@ -30,7 +30,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h2>Welcome to Cloudtop!</h2>
         {people.map((people, i) => (
-          <h2>{people.name}</h2>
+          <h4>{people.name}</h4>
         ))}
       </header>
     </div>
